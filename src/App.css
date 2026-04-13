@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+/* Header/Navigation Styles */
+.header {
+  width: 100%;
+  background: #1a1a1a;
+  color: white;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #0066cc;
+  opacity: 0.8;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.nav a:hover {
+  color: #0066cc;
+  opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  max-width: 900px;
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 2rem;
+} 
+
+/* Home Page Styles */
+.home h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+}
+
+.home h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.post {
+  background: #f9f9f9;
+  /* border-left: 4px solid #0066cc; */
+  border-radius: 4px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  /* border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: left; */
+}
+
+.post::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(102, 126, 234, 0.2);
+}
+
+.post:hover::before {
+  transform: scaleX(1);
+}
+
+.post h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  /* line-height: 1.4; */
+  flex: 1;
+}
+
+.post .date {
+  color: #888;
+  font-size: 0.95rem;
+  /* margin-bottom: 18px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; */
+  /* font-weight: 600; */
+  margin: 0 0 1rem 0;
+}
+
+.post p {
+  color: #444;
+  /* line-height: 1.7; */
+  font-size: 1.05rem;
+  /* flex-grow: 1; */
+  margin: 0.5rem 0;
+}
+
+.read-more-btn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  /* font-weight: 600; */
+  cursor: pointer;
+  transition: background-color 0.3s, ease;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.read-more-btn:hover {
+  background: #0052a3;
+  transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  /* margin-top: 3rem; */
+  flex-wrap: wrap;
+}
+
+.pagination-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pagination-center {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-button {
+  /* padding: 0.5rem 0.75rem; */
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid #ddd; 
+  background-color: white;
+  color: #1a1a1a;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  /* font-size: 1rem;
+  min-width: 40px;
+  text-align: center; */
+}
+
+.pagination-button:hover {
+  border-color: #0066cc;
+  color: #0066cc;
+  /* transform: scale(1.05); */
+}
+
+.pagination-button.active {
+  background: #0066cc;
+  color: white;
+  border-color: #0066cc;
+}
+
+
+.pagination-prev,
+.pagination-next {
+  padding: 0.75rem 1rem;
+  border: 2px solid #0066cc;
+  background: white;
+  color: #0066cc;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-prev:hover:not(:disabled),
+.pagination-next:hover:not(:disabled) {
+  background-color: #0066cc;
+  color: white;
+  transform: scale(1.05);
+}
+
+.pagination-prev:disabled,
+.pagination-next:disabled {
+  /* border-color: #0066cc;
+  color: #ccc; */
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.page-info {
+  text-align: center;
+  /* font-weight: 600; */
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* About Page Styles */
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #555;
+  text-align: center;
+}
+
+.about p:first-of-type {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 20px;
+}
+
+.about h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  background: #333;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 3px solid #667eea;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-container p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .main-content {
+    padding: 30px 15px;
+  }
+
+
+  .home h1 {
+    font-size: 2rem;
+    /* color: #1a1a1a;
+    margin: 0 0 0.5rem 0; */
+    /* margin-bottom: 30px; */
+  }
+
+  /* .home h2 {
+    font-size: 1.25rem;
+  }
+  
+  .home p {
+    font-size: 1.1rem;
+  } */
+
+  .blog-posts {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+

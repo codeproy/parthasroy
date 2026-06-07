@@ -2,10 +2,10 @@ function About() {
   return (
     <section className="about">
       <h1>About Me</h1>
-      <p>Full-Stack Developer with a Passion for Web Technologies</p>
+      <p>Software Engineer with a Passion for AI and Agents</p>
       
       <p>
-        Hello! I'm Partha Roy, a dedicated full-stack developer with over 5 years of experience building web applications. I specialize in creating responsive, user-friendly interfaces and robust backend systems using modern technologies.
+        Hello! I'm Partha Roy, a dedicated software engineer with over 20 years of experience building  software solutions. I specialize in creating responsive, user-friendly interfaces and robust backend systems using modern technologies.
       </p>
 
       <p>
@@ -26,7 +26,7 @@ function About() {
 
       <h2>Experience</h2>
       <p style={{ textAlign: 'left' }}>
-        <strong>Senior Frontend Developer</strong> @ Tech Company (2023-Present)<br/>
+        <strong>Principal Software Engineer </strong> @ Tech Company (2023-Present)<br/>
         Leading frontend development for multiple projects, mentoring junior developers, and optimizing web applications for performance.<br/><br/>
         
         <strong>Full-Stack Developer</strong> @ Digital Solutions (2021-2023)<br/>
@@ -38,12 +38,12 @@ function About() {
 
       <h2>Education</h2>
       <p style={{ textAlign: 'left' }}>
-        <strong>Bachelor of Science in Computer Science</strong><br/>
-        University of Technology (2019)
+        <strong>Bachelor of Technology in Electronics and Communication Engineering</strong><br/>
+        Kalyani Government Engineering College, West Bengal University of Technology (2002-2006)
       </p>
 
       <p style={{ textAlign: 'center', marginTop: '40px', color: '#667eea' }}>
-        <strong>Feel free to reach out! I'm always open to new opportunities and collaborations.</strong>
+        <strong>Feel free to reach out! I'm always open to discuss about software engineering, AI, and agent systems.</strong>
       </p>
     </section>
   )

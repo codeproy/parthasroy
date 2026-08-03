@@ -91,8 +91,8 @@ function Home() {
 
   return (
     <section className="home">
-      <h1>Latest Blog Posts</h1>
-      <h2>Insights and thoughts on AI, Machine Learning, and Technology</h2>
+      <h1>Intelligent Briefs</h1>
+      <h2>Navigating the Next Frontier: AI, Machine Learning, and Beyond</h2>
 
       {loading ? (
         <div className="loading">Loading blog posts...</div>

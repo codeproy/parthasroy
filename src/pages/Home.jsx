@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const loadBlogPosts = async () => {
       try {
-        const modules = import.meta.glob('../data/blogs/*.json', { as: 'raw', eager: true })
+        const modules = import.meta.glob('../data/blogs/*.json', { query: '?raw', eager: true })
         const posts = []
 
         for (const path in modules) {

@@ -13,11 +13,11 @@ function BlogDetail() {
   useEffect(() => {
     const loadBlog = async () => {
       try {
-        const modules = import.meta.glob('../data/blogs/*.json', { as: 'raw', eager: true })
+        const modules = import.meta.glob('../data/blogs/*.json', { query: '?raw', eager: true })
         let foundBlog = null
 
         for (const path in modules) {
-          const jsonString = modules[path]
+          const jsonString = modules[path].default
           const blogData = JSON.parse(jsonString)
           if (blogData.id === parseInt(id)) {
             foundBlog = blogData
